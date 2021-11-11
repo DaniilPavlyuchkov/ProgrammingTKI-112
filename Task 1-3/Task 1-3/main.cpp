@@ -6,7 +6,7 @@
 * \param power параметр силы тяготения
 * \return Возращает расстояние между шарами
 */
-float getDistance(float mass, float power);
+double getDistance(double mass, double power);
 
 /**
 * \brief Точка входа в программу
@@ -15,18 +15,18 @@ float getDistance(float mass, float power);
 int main()
 {
 	std::cout << "Введите массу шаров в тоннах: ";
-	float mass;
+	double mass;
 	std::cin >> mass;
 	std::cout << "Введите силу тяготения: ";
-	float power;
+	double power;
 	std::cin >> power;
-	const float distance = getDistance(mass, power);
+	const double distance = getDistance(mass, power);
 	std::cout << "Расстояние между шарами = " << distance << std::endl;
 
 	return 0;
 }
 
-float getDistance(float mass, float power)
+double getDistance(double mass, double power)
 {
 	return sqrt((6.67 * pow(10, -11) * mass * 1000 * mass * 1000) / power * pow(10, -5));
 }
