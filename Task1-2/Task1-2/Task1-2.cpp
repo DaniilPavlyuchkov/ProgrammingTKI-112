@@ -3,6 +3,7 @@
 
 /**
 * \brief Эта функция вычисляет длину в дюймах
+* \param lenght Параметр длины
 * \return Возвращает значение длины в дюймах
 */
 double getInches(double lenght);
