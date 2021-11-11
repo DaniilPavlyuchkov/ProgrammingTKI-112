@@ -32,7 +32,7 @@ int main()
 	const double z = 0.3;
 	const double a = getA(x, y, z);
 	const double b = getB(x, y, z);
-	std::cout << "x = " << x << " y = " << y << " z = " << z << " a = " << a << " b = " << b << endl;
+	std::cout << "x = " << x << " y = " << y << " z = " << z << " a = " << a << " b = " << b << std::endl;
 	
 	return 0;
 }
