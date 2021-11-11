@@ -19,6 +19,7 @@ int main()
 	std::cin >> lenght;
 	lenght = getInches(lenght);
 	std::cout << "Длина в дюймах = " << lenght << std::endl;
+	return 0;
 }
 
 double getInches(double lenght)
