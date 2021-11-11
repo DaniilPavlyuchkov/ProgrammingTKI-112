@@ -1,28 +1,29 @@
+
 #include <math.h>
 #include <iostream>
 
 
 /**
-* \brief Эта функция вычисляет значение A
-* \param x параметр x
-* \param y параметр y
-* \param z параметр z
-* \return Возвращает значение A
+* \brief Р­С‚Р° С„СѓРЅРєС†РёСЏ РІС‹С‡РёСЃР»СЏРµС‚ Р·РЅР°С‡РµРЅРёРµ A
+* \param x РїР°СЂР°РјРµС‚СЂ x
+* \param y РїР°СЂР°РјРµС‚СЂ y
+* \param z РїР°СЂР°РјРµС‚СЂ z
+* \return Р’РѕР·РІСЂР°С‰Р°РµС‚ Р·РЅР°С‡РµРЅРёРµ A
 */
 double getA(const double x, const double y, const double z);
 
 /**
-* \brief Эта функция вычисляет значение B
-* \param x параметр x
-* \param y параметр y
-* \param z параметр z
-* \return Возвращает значение B
+* \brief Р­С‚Р° С„СѓРЅРєС†РёСЏ РІС‹С‡РёСЃР»СЏРµС‚ Р·РЅР°С‡РµРЅРёРµ B
+* \param x РїР°СЂР°РјРµС‚СЂ x
+* \param y РїР°СЂР°РјРµС‚СЂ y
+* \param z РїР°СЂР°РјРµС‚СЂ z
+* \return Р’РѕР·РІСЂР°С‰Р°РµС‚ Р·РЅР°С‡РµРЅРёРµ B
 */
 double getB(const double x, const double y, const double z);
 
 /**
-* \brief Точка входа в программу
-* \return В случае успеха возвращает 0
+* \brief РўРѕС‡РєР° РІС…РѕРґР° РІ РїСЂРѕРіСЂР°РјРјСѓ
+* \return Р’ СЃР»СѓС‡Р°Рµ СѓСЃРїРµС…Р° РІРѕР·РІСЂР°С‰Р°РµС‚ 0
 */
 int main()
 {
@@ -31,9 +32,8 @@ int main()
 	const double z = 0.3;
 	const double a = getA(x, y, z);
 	const double b = getB(x, y, z);
-
-	std::cout << "a = " << a << std::endl;
-	std::cout << "b = " << b << std::endl;
+	std::cout << "x = " << x << " y = " << y << " z = " << z << " a = " << a << " b = " << b;
+	
 	return 0;
 }
 
