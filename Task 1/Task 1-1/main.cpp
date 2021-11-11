@@ -7,7 +7,7 @@
 * \param x параметр x
 * \param y параметр y
 * \param z параметр z
-* \return ¬ случае успеха возвращает значение A
+* \return ¬озвращает значение A
 */
 double getA(const double x, const double y, const double z);
 
@@ -16,7 +16,7 @@ double getA(const double x, const double y, const double z);
 * \param x параметр x
 * \param y параметр y
 * \param z параметр z
-* \return ¬ случае успеха возвращает значение B
+* \return ¬озвращает значение B
 */
 double getB(const double x, const double y, const double z);
 
