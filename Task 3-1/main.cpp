@@ -7,7 +7,7 @@
  * \param x Заданная точка
  * \return Возвращает значение функции в заданной точке
  */
-double myFunc(double x);
+double calculateFunc(double x);
 
 /**
  * \brief Проверяет, существует ли функция в заданной точке
@@ -28,7 +28,7 @@ int main()
 	{
 		if (isCalculated(x))
 		{
-			const double y = myFunc(x);
+			const double y = calculateFunc(x);
 			std::cout << "x = " << std::setw(5) << std::left << std::setprecision(5) << x << " y = " << y << "\n";
 		}
 		else
@@ -43,7 +43,7 @@ int main()
 	return 0;
 }
 
-double myFunc(const double x)
+double calculateFunc(const double x)
 {
 	return 3 * log(x) * log(x) + 6 * log(x) - 5;
 }
