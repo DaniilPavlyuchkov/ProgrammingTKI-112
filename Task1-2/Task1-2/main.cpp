@@ -22,7 +22,7 @@ int main()
 	return 0;
 }
 
-double getInches(double lenght)
+double getInches(const double lenght)
 {
 	return lenght / 2.5;
 }
