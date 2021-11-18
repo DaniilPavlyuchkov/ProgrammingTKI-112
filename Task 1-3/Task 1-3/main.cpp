@@ -26,7 +26,7 @@ int main()
 	return 0;
 }
 
-double getDistance(double mass, double power)
+double getDistance(const double mass, const double power)
 {
 	return sqrt((6.67 * pow(10, -11) * mass * 1000 * mass * 1000) / power * pow(10, -5));
 }
