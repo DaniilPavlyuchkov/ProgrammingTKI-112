@@ -2,19 +2,35 @@
 #include <algorithm>
 
 /**
-* \brief Функция для сравнения двух чисел
+* \brief Функция для упорядочивания чисел в порядке возрастания
 * \param first_num Первое число
 * \param second_num Второе число
-* \return Если первое число больше второго, возвращает true; В обратном случае - false
+* \param third_num Третье число
 */
-bool compare(float first_num, float second_num);
+void sortAscending(double first_num, double second_num, double third_num);
 
 /**
- * \brief Комманды для работы с массивом
+* \brief Функция для упорядочивания чисел в порядке убывания
+* \param first_num Первое число
+* \param second_num Второе число
+* \param third_num Третье число
+*/
+void sortDescending(double first_num, double second_num, double third_num);
+
+/**
+* \brief Функция для вывода чисел на экран
+* \param first_num Первое число
+* \param second_num Второе число
+* \param third_num Третье число
+*/
+void numsOutput(double first_num, double second_num, double third_num);
+
+/**
+ * \brief Комманды для работы с числами
  */
-enum class ARRAY_COMMANDS
+enum class SORT_COMMANDS
 {
-	ASCENDING, DESCENDING
+	ASCENDING = 1, DESCENDING = 2
 };
 
 /**
@@ -22,49 +38,70 @@ enum class ARRAY_COMMANDS
 * \return В случае успеха возвращает 0
 */
 int main()
-{	
-	const size_t size = 3;
-	double nums_array[size];
+{
 	std::cout << "Введите первое число: ";
-	std::cin >> nums_array[0];
+	double first_num;
+	std::cin >> first_num;
 	std::cout << "Введите второе число: ";
-	std::cin >> nums_array[1];
+	double second_num;
+	std::cin >> second_num;
 	std::cout << "Введите третье число: ";
-	std::cin >> nums_array[2];
-	
-	std::cout << "Чтобы расположить числа в порядке возрастания (убывания) введите 0 (1)\n";
-	
+	double third_num;
+	std::cin >> third_num;
+
+	std::cout << "Введите комманду для расположения чисел\n"
+		<< "В порядке возрастания - " << static_cast<int>(SORT_COMMANDS::ASCENDING)
+		<< "\nВ порядке убывания - " << static_cast<int>(SORT_COMMANDS::DESCENDING) << "\n";
+
 	int command;
 	std::cin >> command;
 
-	const auto array_commands = static_cast<ARRAY_COMMANDS>(command);
-	switch (array_commands)
+	const auto sort_commands = static_cast<SORT_COMMANDS>(command);
+	switch (sort_commands)
 	{
-	
-		case ARRAY_COMMANDS::ASCENDING:
 
-			std::sort(nums_array, nums_array + size);
+	case SORT_COMMANDS::ASCENDING:
 
-			for (int i = 0; i < size; ++i)
-				std::cout << nums_array[i] << ' ';
-			break;
+		sortAscending(first_num, second_num, third_num);
+		break;
 
-		case ARRAY_COMMANDS::DESCENDING:
+	case SORT_COMMANDS::DESCENDING:
 
-			std::sort(nums_array, nums_array + size, compare);
+		sortDescending(first_num, second_num, third_num);
+		break;
 
-			for (int i = 0; i < size; ++i)
-				std::cout << nums_array[i] << ' ';
-			break;
+	default:
+		std::cout << "Введена неправильная команда\n";
+		break;
 	}
 	return 0;
-}	
-
-bool compare(float first_num, float second_num)
-{
-	if (first_num > second_num)
-		return true;
-	else
-		return false;
 }
 
+void sortAscending(double first_num, double second_num, double third_num)
+{	
+	
+	if (first_num > second_num)
+		std::swap(first_num, second_num);
+	if (first_num > third_num)
+		std::swap(first_num, third_num);
+	if (second_num > third_num)
+		std::swap(second_num, third_num);
+	numsOutput(first_num, second_num, third_num);
+}
+
+void sortDescending(double first_num, double second_num, double third_num)
+{
+
+	if (first_num < second_num)
+		std::swap(first_num, second_num);
+	if (first_num < third_num)
+		std::swap(first_num, third_num);
+	if (second_num < third_num)
+		std::swap(second_num, third_num);
+	numsOutput(first_num, second_num, third_num);
+}
+
+void numsOutput(double first_num, double second_num, double third_num)
+{
+	std::cout << "\n" << first_num << "\n" << second_num << "\n" << third_num << "\n";
+}
