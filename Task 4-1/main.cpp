@@ -4,57 +4,57 @@
 using namespace std;
 
 /**
- * \brief Функция ввода размера массива.
- * \return Возвращает размер массива.
+ * \brief Р¤СѓРЅРєС†РёСЏ РІРІРѕРґР° СЂР°Р·РјРµСЂР° РјР°СЃСЃРёРІР°.
+ * \return Р’РѕР·РІСЂР°С‰Р°РµС‚ СЂР°Р·РјРµСЂ РјР°СЃСЃРёРІР°.
  */
 size_t getSize();
 
 /**
- * \brief Заполнение массива случайными числами.
- * \param size размер массива.
- * \param minValue минимальное значение элементов массива.
- * \param maxValue максимальное значение элементов массива.
- * \return Возвращает заполненный массив.
+ * \brief Р—Р°РїРѕР»РЅРµРЅРёРµ РјР°СЃСЃРёРІР° СЃР»СѓС‡Р°Р№РЅС‹РјРё С‡РёСЃР»Р°РјРё.
+ * \param size СЂР°Р·РјРµСЂ РјР°СЃСЃРёРІР°.
+ * \param minValue РјРёРЅРёРјР°Р»СЊРЅРѕРµ Р·РЅР°С‡РµРЅРёРµ СЌР»РµРјРµРЅС‚РѕРІ РјР°СЃСЃРёРІР°.
+ * \param maxValue РјР°РєСЃРёРјР°Р»СЊРЅРѕРµ Р·РЅР°С‡РµРЅРёРµ СЌР»РµРјРµРЅС‚РѕРІ РјР°СЃСЃРёРІР°.
+ * \return Р’РѕР·РІСЂР°С‰Р°РµС‚ Р·Р°РїРѕР»РЅРµРЅРЅС‹Р№ РјР°СЃСЃРёРІ.
  */
 int* randomizeArray(size_t size, int minValue, int maxValue);
 
 /**
- * \brief Вывод массива.
- * \param newArray массив.
- * \param size размер массива.
+ * \brief Р’С‹РІРѕРґ РјР°СЃСЃРёРІР°.
+ * \param newArray РјР°СЃСЃРёРІ.
+ * \param size СЂР°Р·РјРµСЂ РјР°СЃСЃРёРІР°.
  */
 void arrayPrint(const int* newArray, const size_t size);
 
 /**
- * \brief Функция заполнения массива вручную
- * \param size размер массива.
- * \return Возвращает заполненный массив.
+ * \brief Р¤СѓРЅРєС†РёСЏ Р·Р°РїРѕР»РЅРµРЅРёСЏ РјР°СЃСЃРёРІР° РІСЂСѓС‡РЅСѓСЋ
+ * \param size СЂР°Р·РјРµСЂ РјР°СЃСЃРёРІР°.
+ * \return Р’РѕР·РІСЂР°С‰Р°РµС‚ Р·Р°РїРѕР»РЅРµРЅРЅС‹Р№ РјР°СЃСЃРёРІ.
  */
 int* userArray(size_t size);
 
 /**
- * \brief Функция, выполняющая умножение четных элементов, значения которых по модулю меньше 5
- * \param size размер массива.
- * \return Возвращает произведение элементов массива
+ * \brief Р¤СѓРЅРєС†РёСЏ, РІС‹РїРѕР»РЅСЏСЋС‰Р°СЏ СѓРјРЅРѕР¶РµРЅРёРµ С‡РµС‚РЅС‹С… СЌР»РµРјРµРЅС‚РѕРІ, Р·РЅР°С‡РµРЅРёСЏ РєРѕС‚РѕСЂС‹С… РїРѕ РјРѕРґСѓР»СЋ РјРµРЅСЊС€Рµ 5
+ * \param size СЂР°Р·РјРµСЂ РјР°СЃСЃРёРІР°.
+ * \return Р’РѕР·РІСЂР°С‰Р°РµС‚ РїСЂРѕРёР·РІРµРґРµРЅРёРµ СЌР»РµРјРµРЅС‚РѕРІ РјР°СЃСЃРёРІР°
  */
 void multiplyingEvenNums(const int* newArray, size_t size);
 
 /**
- * \brief Функция, считающая количество элементов, значения которых нечетны и по модулю превосходят заданное число А
- * \param size размер массива.
- * \return Возвращает количество элементов
+ * \brief Р¤СѓРЅРєС†РёСЏ, СЃС‡РёС‚Р°СЋС‰Р°СЏ РєРѕР»РёС‡РµСЃС‚РІРѕ СЌР»РµРјРµРЅС‚РѕРІ, Р·РЅР°С‡РµРЅРёСЏ РєРѕС‚РѕСЂС‹С… РЅРµС‡РµС‚РЅС‹ Рё РїРѕ РјРѕРґСѓР»СЋ РїСЂРµРІРѕСЃС…РѕРґСЏС‚ Р·Р°РґР°РЅРЅРѕРµ С‡РёСЃР»Рѕ Рђ
+ * \param size СЂР°Р·РјРµСЂ РјР°СЃСЃРёРІР°.
+ * \return Р’РѕР·РІСЂР°С‰Р°РµС‚ РєРѕР»РёС‡РµСЃС‚РІРѕ СЌР»РµРјРµРЅС‚РѕРІ
  */
 void countOddNums(const int* newArray, size_t size);
 
 /**
- * \brief Функция, выполняющая умножение нечетных элементов массива, кратных 3, на их номера
- * \param size размер массива.
- * \return Возвращает произведение элементов массива на их номера
+ * \brief Р¤СѓРЅРєС†РёСЏ, РІС‹РїРѕР»РЅСЏСЋС‰Р°СЏ СѓРјРЅРѕР¶РµРЅРёРµ РЅРµС‡РµС‚РЅС‹С… СЌР»РµРјРµРЅС‚РѕРІ РјР°СЃСЃРёРІР°, РєСЂР°С‚РЅС‹С… 3, РЅР° РёС… РЅРѕРјРµСЂР°
+ * \param size СЂР°Р·РјРµСЂ РјР°СЃСЃРёРІР°.
+ * \return Р’РѕР·РІСЂР°С‰Р°РµС‚ РїСЂРѕРёР·РІРµРґРµРЅРёРµ СЌР»РµРјРµРЅС‚РѕРІ РјР°СЃСЃРёРІР° РЅР° РёС… РЅРѕРјРµСЂР°
  */
 void multiplyingOddNums(const int* newArray, size_t size);
 
 /**
- * \brief Варианты ввода массива.
+ * \brief Р’Р°СЂРёР°РЅС‚С‹ РІРІРѕРґР° РјР°СЃСЃРёРІР°.
  */
 enum class ARRAY_INPUT
 {
@@ -68,9 +68,9 @@ int main()
 	if (size == 0)
 		return 1;
 
-	cout << "Заполнить массив:\n";
-	cout << static_cast<int>(ARRAY_INPUT::RANDOMLY) << " - случайно,\n";
-	cout << static_cast<int>(ARRAY_INPUT::MANUALLY) << " - вручную.\n";
+	cout << "Р—Р°РїРѕР»РЅРёС‚СЊ РјР°СЃСЃРёРІ:\n";
+	cout << static_cast<int>(ARRAY_INPUT::RANDOMLY) << " - СЃР»СѓС‡Р°Р№РЅРѕ,\n";
+	cout << static_cast<int>(ARRAY_INPUT::MANUALLY) << " - РІСЂСѓС‡РЅСѓСЋ.\n";
 	int choice;
 	cin >> choice;
 
@@ -80,12 +80,12 @@ int main()
 
 	auto minValue = 0;
 	auto maxValue = 0;
-	cout << "Введите диапазон чисел массива" << endl;
+	cout << "Р’РІРµРґРёС‚Рµ РґРёР°РїР°Р·РѕРЅ С‡РёСЃРµР» РјР°СЃСЃРёРІР°" << endl;
 	cin >> minValue >> maxValue;
 
 	if (maxValue <= minValue)
 	{
-		cout << "Неверный диапазон" << endl;
+		cout << "РќРµРІРµСЂРЅС‹Р№ РґРёР°РїР°Р·РѕРЅ" << endl;
 	}
 
 	switch (chosen)
@@ -117,11 +117,11 @@ int main()
 size_t getSize() 
 {
 	int size = 0;
-	cout << "Введите размер массива" << endl;
+	cout << "Р’РІРµРґРёС‚Рµ СЂР°Р·РјРµСЂ РјР°СЃСЃРёРІР°" << endl;
 	cin >> size;
 	if (size <= 0)
 	{
-		cout << "Неверный размер";
+		cout << "РќРµРІРµСЂРЅС‹Р№ СЂР°Р·РјРµСЂ";
 		return 0;
 	}
 	else
@@ -132,11 +132,11 @@ void arrayPrint(const int* newArray, const size_t size)
 {
 	if (newArray == nullptr)
 	{
-		cout << "Массива не существует\n";
+		cout << "РњР°СЃСЃРёРІР° РЅРµ СЃСѓС‰РµСЃС‚РІСѓРµС‚\n";
 	}
 	else
 	{
-		cout << "Массив:\n";
+		cout << "РњР°СЃСЃРёРІ:\n";
 		for (int index = 0; index < size; index++)
 		{
 			cout << newArray[index] << " ";
@@ -163,7 +163,7 @@ int* randomizeArray(const size_t size, const int minValue, const int maxValue)
 int* userArray(const size_t size)
 {
 	auto* array = new int[size];
-	cout << "Введите элементы массива" << "\n";
+	cout << "Р’РІРµРґРёС‚Рµ СЌР»РµРјРµРЅС‚С‹ РјР°СЃСЃРёРІР°" << "\n";
 
 	for (int index = 0; index < size; index++)
 	{
@@ -183,12 +183,12 @@ void multiplyingEvenNums(const int* newArray, size_t size)
 			mult *= newArray[index];
 		}
 	}
-	cout << "Произведение четных элементов: " << mult << "\n\n";
+	cout << "РџСЂРѕРёР·РІРµРґРµРЅРёРµ С‡РµС‚РЅС‹С… СЌР»РµРјРµРЅС‚РѕРІ: " << mult << "\n\n";
 }
 
 void countOddNums(const int* newArray, size_t size)
 {
-	cout << "Введите число A\n";
+	cout << "Р’РІРµРґРёС‚Рµ С‡РёСЃР»Рѕ A\n";
 	int A;
 	cin >> A;
 	int count = 0;
@@ -199,12 +199,12 @@ void countOddNums(const int* newArray, size_t size)
 			count++;
 		}
 	}
-	cout << "Количество нечетных элементов > A : " << count << "\n\n";
+	cout << "РљРѕР»РёС‡РµСЃС‚РІРѕ РЅРµС‡РµС‚РЅС‹С… СЌР»РµРјРµРЅС‚РѕРІ > A : " << count << "\n\n";
 }
 
 void multiplyingOddNums(const int* newArray, size_t size)
 {
-	cout << "Произведение нечетных элементов: ";
+	cout << "РџСЂРѕРёР·РІРµРґРµРЅРёРµ РЅРµС‡РµС‚РЅС‹С… СЌР»РµРјРµРЅС‚РѕРІ: ";
 	int mult = 1;
 	for (int index = 0; index < size; index++)
 	{
