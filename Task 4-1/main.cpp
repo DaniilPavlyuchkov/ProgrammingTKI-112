@@ -78,15 +78,8 @@ int main()
 
 	int* newArray = nullptr;
 
-	auto minValue = 0;
-	auto maxValue = 0;
-	cout << "Введите диапазон чисел массива" << endl;
-	cin >> minValue >> maxValue;
-
-	if (maxValue <= minValue)
-	{
-		cout << "Неверный диапазон" << endl;
-	}
+	auto minValue = -10;
+	auto maxValue = 20;
 
 	switch (chosen)
 	{
@@ -114,7 +107,7 @@ int main()
 	return 0;
 }
 
-size_t getSize() 
+size_t getSize()
 {
 	int size = 0;
 	cout << "Введите размер массива" << endl;
@@ -175,15 +168,24 @@ int* userArray(const size_t size)
 
 void multiplyingEvenNums(const int* newArray, size_t size)
 {
+	int count = 0;
 	int mult = 1;
 	for (int index = 0; index < size; index++)
 	{
 		if (newArray[index] % 2 == 0 && abs(newArray[index]) < 5)
 		{
 			mult *= newArray[index];
+			count++;
 		}
 	}
-	cout << "Произведение четных элементов: " << mult << "\n\n";
+	if (count == 0)
+	{
+		cout << "Нет таких элементов\n";
+	}
+	else
+	{
+		cout << "Произведение четных элементов: " << mult << "\n\n";
+	}
 }
 
 void countOddNums(const int* newArray, size_t size)
@@ -199,11 +201,20 @@ void countOddNums(const int* newArray, size_t size)
 			count++;
 		}
 	}
-	cout << "Количество нечетных элементов > A : " << count << "\n\n";
+
+	if (count == 0)
+	{
+		cout << "Нет таких элементов\n";
+	}
+	else
+	{
+		cout << "Количество нечетных элементов > A : " << count << "\n\n";
+	}
 }
 
 void multiplyingOddNums(const int* newArray, size_t size)
 {
+	int count = 0;
 	cout << "Произведение нечетных элементов: ";
 	int mult = 1;
 	for (int index = 0; index < size; index++)
@@ -212,6 +223,13 @@ void multiplyingOddNums(const int* newArray, size_t size)
 		{
 			mult = newArray[index] * index;
 			cout << mult << " ";
+			count++;
 		}
 	}
+
+	if (count == 0)
+	{
+		cout << "Нет таких элементов\n";
+	}
+	cout << endl;
 }
