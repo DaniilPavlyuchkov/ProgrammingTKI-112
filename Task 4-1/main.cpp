@@ -61,12 +61,13 @@ enum class ARRAY_INPUT
 	RANDOMLY, MANUALLY
 };
 
+/**
+ * \brief Точка входа в программу
+ * \return В случае успеха возвращает 0
+ */
 int main()
 {
 	size_t size = getSize();
-
-	if (size == 0)
-		return 1;
 
 	cout << "Заполнить массив:\n";
 	cout << static_cast<int>(ARRAY_INPUT::RANDOMLY) << " - случайно,\n";
