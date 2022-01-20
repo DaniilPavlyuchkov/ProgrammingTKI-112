@@ -27,17 +27,17 @@ double getThirdY(const double a, double x);
 int main()
 {
 	const double a = 2.5;
-
+	const double eps = 0.5;
 	cout << "Введите x = ";
 	double x;
 	cin >> x;
 
-	if (x < 0.5)
+	if (x < eps)
 	{
 		double firstY = getFirstY(a, x);
 		cout << firstY;
 	}
-	else if (x == 0.5)
+	else if ((x - eps) == 0)
 	{
 		double secondY = getSecondY(a, x);
 		cout << secondY;
