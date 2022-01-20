@@ -98,12 +98,17 @@ int main()
 
 	arrayPrint(newArray, size);
 
-
 	multiplyingEvenNums(newArray, size);
 
 	countOddNums(newArray, size);
 
 	multiplyingOddNums(newArray, size);
+
+	if (newArray != nullptr)
+	{
+		delete[] newArray;
+		newArray = nullptr;
+	}
 
 	return 0;
 }
@@ -159,7 +164,7 @@ int* userArray(const size_t size)
 	auto* array = new int[size];
 	cout << "Введите элементы массива" << "\n";
 
-	for (int index = 0; index < size; index++)
+	for (size_t index = 0; index < size; index++)
 	{
 		cin >> array[index];
 	}
@@ -167,11 +172,17 @@ int* userArray(const size_t size)
 	return array;
 }
 
-void multiplyingEvenNums(const int* newArray, size_t size)
+void multiplyingEvenNums(const int* newArray, const size_t size)
 {
 	int count = 0;
 	int mult = 1;
-	for (int index = 0; index < size; index++)
+
+	if (newArray == nullptr)
+	{
+		cout << "Массива не существует\n";
+	}
+
+	for (size_t index = 0; index < size; index++)
 	{
 		if (newArray[index] % 2 == 0 && abs(newArray[index]) < 5)
 		{
@@ -189,13 +200,13 @@ void multiplyingEvenNums(const int* newArray, size_t size)
 	}
 }
 
-void countOddNums(const int* newArray, size_t size)
+void countOddNums(const int* newArray, const size_t size)
 {
 	cout << "Введите число A\n";
 	int A;
 	cin >> A;
 	int count = 0;
-	for (int index = 0; index < size; index++)
+	for (size_t index = 0; index < size; index++)
 	{
 		if (newArray[index] % 2 != 0 && abs(newArray[index]) > A)
 		{
@@ -213,12 +224,12 @@ void countOddNums(const int* newArray, size_t size)
 	}
 }
 
-void multiplyingOddNums(const int* newArray, size_t size)
+void multiplyingOddNums(const int* newArray, const size_t size)
 {
 	int count = 0;
 	cout << "Произведение нечетных элементов: ";
 	int mult = 1;
-	for (int index = 0; index < size; index++)
+	for (size_t index = 0; index < size; index++)
 	{
 		if (newArray[index] % 2 != 0 && newArray[index] % 3 == 0)
 		{
