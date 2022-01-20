@@ -16,7 +16,7 @@ size_t getSize();
  * \param maxValue максимальное значение элементов массива.
  * \return Возвращает заполненный массив.
  */
-int* randomizeArray(size_t size, int minValue, int maxValue);
+int* randomizeArray(const size_t size, int minValue, int maxValue);
 
 /**
  * \brief Вывод массива.
@@ -36,7 +36,7 @@ int* userArray(size_t size);
  * \brief Заменяет последний отрицательный элемент массива на модуль первого
  * \param size Размер массива
  */
-void replaceLastNegativeNum(int*, size_t size);
+void replaceLastNegativeNum(int*, const size_t size);
 
 /**
  * \brief Удаляет все числа, у которых одинаковые цифры 
@@ -44,14 +44,14 @@ void replaceLastNegativeNum(int*, size_t size);
  * \param newsize Размер нового массива
  * \return Массив, в котором удалены все числа, у которых одинаковые цифры 
  */
-int* deleteNums(int*, size_t size, size_t newSize);
+int* deleteNums(int*, const size_t size, size_t newSize);
 
 /**
  * \brief Считает количество чисел с одинаковыми цифрами (\a index)
  * \param size Размер массива
  * \return Количество чисел с одинаковыми цифрами
  */
-int getNumsCount(int*, size_t size);
+size_t getNumsCount(int*, const size_t size);
 
 /**
  * \brief Создает из исходного массива новый массив М по заданному правилу
@@ -68,13 +68,12 @@ enum class ARRAY_INPUT
 	RANDOMLY, MANUALLY
 };
 
-/**
- * \brief Точка входа в программу
- * \return В случае успеха возвращает 0
- */
 int main()
 {
 	size_t size = getSize();
+
+	if (size == 0)
+		return 1;
 
 	cout << "Заполнить массив:\n";
 	cout << static_cast<int>(ARRAY_INPUT::RANDOMLY) << " - случайно,\n";
@@ -107,6 +106,8 @@ int main()
 	arrayPrint(array, size);
 
 	replaceLastNegativeNum(array, size);
+	cout << "\nПосле замены\n";
+	arrayPrint(array, size);
 
 	int numsCount = getNumsCount(array, size);
 	size_t newSize = size - numsCount;
@@ -118,6 +119,23 @@ int main()
 	int* newArrayM = createArrayM(array, size);
 	arrayPrint(newArrayM, size);
 
+	if (array != nullptr)
+	{
+		delete[] array;
+		array = nullptr;
+	}
+
+	if (newArray != nullptr)
+	{
+		delete[] newArray;
+		newArray = nullptr;
+	}
+
+	if (newArrayM != nullptr)
+	{
+		delete[] newArrayM;
+		newArrayM = nullptr;
+	}
 
 	return 0;
 }
@@ -180,11 +198,11 @@ int* userArray(const size_t size)
 	return array;
 }
 
-void replaceLastNegativeNum(int* array, size_t size)
+void replaceLastNegativeNum(int* array, const size_t size)
 {
 	int count = -1;
 	int temp;
-	for (int index = 0; index < size; index++)
+	for (size_t index = 0; index < size; index++)
 	{
 		if (array[index] < 0)
 		{
@@ -201,16 +219,15 @@ void replaceLastNegativeNum(int* array, size_t size)
 	else
 	{
 		array[temp] = abs(array[0]);
-		cout << "\nПосле замены\n";
-		arrayPrint(array, size);
+
 	}
 }
 
-int* deleteNums(int* array, size_t size, size_t newSize)
+int* deleteNums(int* array, const size_t size, size_t newSize)
 {
 	int* newArray = new int[newSize];
 	int newIndex = 0;
-	for (int index = 0; index < size; index++)
+	for (size_t index = 0; index < size; index++)
 	{
 		int temp = abs(array[index]);
 		if (temp % 10 != temp / 10 || array[index] == 0) 
@@ -225,10 +242,10 @@ int* deleteNums(int* array, size_t size, size_t newSize)
 	return newArray;
 }
 
-int getNumsCount(int* array, size_t size)
+size_t getNumsCount(int* array, const size_t size)
 {
 	int count = 0;
-	for (int index = 0; index < size; index++)
+	for (size_t index = 0; index < size; index++)
 	{
 		int temp = abs(array[index]);
 		if (temp % 10 == temp / 10 && array[index] != 0)
@@ -242,7 +259,7 @@ int getNumsCount(int* array, size_t size)
 int* createArrayM(int* arrayP, const size_t size)
 {
 	int* arrayM = new int[size];
-	for (int index = 0; index < size; index++)
+	for (size_t index = 0; index < size; index++)
 		if (arrayP[index] % 2 == 0)
 		{
 			arrayM[index] = arrayP[index] * index;
@@ -253,10 +270,3 @@ int* createArrayM(int* arrayP, const size_t size)
 		}
 	return arrayM;
 }
-
-	
-
-
-
-
-
