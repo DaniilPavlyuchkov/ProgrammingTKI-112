@@ -28,6 +28,7 @@ int main()
 {
 	const double a = 2.5;
 	const double eps = 0.5;
+	const double epsilon = 0.00001;
 	cout << "Введите x = ";
 	double x;
 	cin >> x;
@@ -37,7 +38,7 @@ int main()
 		double firstY = getFirstY(a, x);
 		cout << firstY;
 	}
-	else if ((x - eps) == 0)
+	else if (abs(x - eps) <= epsilon)
 	{
 		double secondY = getSecondY(a, x);
 		cout << secondY;
